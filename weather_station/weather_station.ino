@@ -73,7 +73,7 @@ void send_weather_data(float temperature, float humidity, float pressure) {
     String json;
     serializeJson(doc, json);
 
-    ws.textAll(json);// send message
+    ws.broadcastTXT(json);// send message
 
     Serial.println("Sent: " + json);
 }
@@ -119,9 +119,11 @@ void setup() {
 
 void loop() {
   ws.loop(); //manages websocket events like connect and disconnect
+  dht.humidity().getEvent(&event);
   if(client_connected){ //if client is connected send the weather data
-    send_weather_data((bmp.readTemperature()-correction_val))
+    send_weather_data((bmp.readTemperature()-correction_val), event.relative_humidity, bmp.readPressure());
   }
+  delay(2000); // send once every 2 second
   /*
   Serial.print("Temperature = ");
   float correction_val = 1;
@@ -147,5 +149,5 @@ void loop() {
   Serial.println();
   */
 
-  delay(2000); // send once every 2 second
+  
 }
