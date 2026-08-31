@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\DANTE\\source\\repos\\weather_station\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Users\\DANTE\\source\\repos\\weather_station\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|c:\\users\\dante\\source\\repos\\weather_station\\weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|solutionrelative:weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|c:\\users\\dante\\source\\repos\\weather_station\\weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|solutionrelative:weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|c:\\users\\dante\\source\\repos\\weather_station\\weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|solutionrelative:weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Users\\DANTE\\source\\repos\\weather_station\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|c:\\users\\dante\\source\\repos\\weather_station\\weather_station\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\DANTE\\source\\repos\\weather_station\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Form1.cs",
               "RelativeDocumentMoniker": "weather_station\\Form1.cs",

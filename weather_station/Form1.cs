@@ -27,7 +27,7 @@ namespace weather_station
 
         }
 
-        private void load_elements(){
+        private async void load_elements(){
 
         }
         private async void join_btn_Click(object sender, EventArgs e)
