@@ -12,8 +12,9 @@
 #define BMP280_ADDR 0x76 //i2c address
 #define DHT11_PIN 4
 // Globals
-WebSocketsServer webSocket = WebSocketsServer(80);
+WebSocketsServer ws = WebSocketsServer(80);
 bool client_connected = false;
+float correction_val = 1;
 
 // Called when receiving any WebSocket message
 void onWebSocketEvent(uint8_t num,
@@ -32,7 +33,7 @@ void onWebSocketEvent(uint8_t num,
     // New client has connected
     case WStype_CONNECTED:
       {
-        IPAddress ip = webSocket.remoteIP(num);
+        IPAddress ip = ws.remoteIP(num);
         Serial.printf("[%u] Connection from ", num);
         Serial.println(ip.toString());
       }
@@ -72,7 +73,7 @@ void send_weather_data(float temperature, float humidity, float pressure) {
     String json;
     serializeJson(doc, json);
 
-    ws.textAll(json);
+    ws.textAll(json);// send message
 
     Serial.println("Sent: " + json);
 }
@@ -95,8 +96,8 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   // Start WebSocket server and assign callback
-  webSocket.begin();
-  webSocket.onEvent(onWebSocketEvent);
+  ws.begin();
+  ws.onEvent(onWebSocketEvent);
 
   //sensor stuff
   if(!bmp.begin(BMP280_ADDR)){
@@ -117,7 +118,10 @@ void setup() {
 
 
 void loop() {
-  webSocket.loop();
+  ws.loop(); //manages websocket events like connect and disconnect
+  if(client_connected){ //if client is connected send the weather data
+    send_weather_data((bmp.readTemperature()-correction_val))
+  }
   /*
   Serial.print("Temperature = ");
   float correction_val = 1;
