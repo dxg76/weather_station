@@ -28,12 +28,14 @@ void onWebSocketEvent(uint8_t num,
     // Client has disconnected
     case WStype_DISCONNECTED:
       Serial.printf("[%u] Disconnected!\n", num);
+      client_connected  = false;
       break;
 
     // New client has connected
     case WStype_CONNECTED:
       {
         IPAddress ip = ws.remoteIP(num);
+        client_connected = true;
         Serial.printf("[%u] Connection from ", num);
         Serial.println(ip.toString());
       }

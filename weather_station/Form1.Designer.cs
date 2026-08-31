@@ -1,4 +1,7 @@
-﻿namespace weather_station
+﻿using System.Net.WebSockets;
+using System.Threading;
+
+namespace weather_station
 {
     partial class Form1
     {
@@ -6,7 +9,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -33,6 +35,12 @@
             this.simple_text2 = new System.Windows.Forms.Label();
             this.join_btn = new System.Windows.Forms.Button();
             this.leave_btn = new System.Windows.Forms.Button();
+            this.temp_title_lbl = new System.Windows.Forms.Label();
+            this.humid_title_lbl = new System.Windows.Forms.Label();
+            this.press_title_lbl = new System.Windows.Forms.Label();
+            this.temp_mes_lbl = new System.Windows.Forms.Label();
+            this.humid_mes_lbl = new System.Windows.Forms.Label();
+            this.press_mes_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // simple_text1
@@ -88,18 +96,78 @@
             this.leave_btn.UseVisualStyleBackColor = false;
             this.leave_btn.Click += new System.EventHandler(this.leave_btn_Click);
             // 
+            // temp_title_lbl
+            // 
+            this.temp_title_lbl.AutoSize = true;
+            this.temp_title_lbl.Location = new System.Drawing.Point(504, 135);
+            this.temp_title_lbl.Name = "temp_title_lbl";
+            this.temp_title_lbl.Size = new System.Drawing.Size(78, 13);
+            this.temp_title_lbl.TabIndex = 5;
+            this.temp_title_lbl.Text = "temperature [F]";
+            // 
+            // humid_title_lbl
+            // 
+            this.humid_title_lbl.AutoSize = true;
+            this.humid_title_lbl.Location = new System.Drawing.Point(504, 148);
+            this.humid_title_lbl.Name = "humid_title_lbl";
+            this.humid_title_lbl.Size = new System.Drawing.Size(80, 13);
+            this.humid_title_lbl.TabIndex = 6;
+            this.humid_title_lbl.Text = "humidity       [%]";
+            // 
+            // press_title_lbl
+            // 
+            this.press_title_lbl.AutoSize = true;
+            this.press_title_lbl.Location = new System.Drawing.Point(504, 161);
+            this.press_title_lbl.Name = "press_title_lbl";
+            this.press_title_lbl.Size = new System.Drawing.Size(84, 13);
+            this.press_title_lbl.TabIndex = 7;
+            this.press_title_lbl.Text = "pressure      [Pa]";
+            // 
+            // temp_mes_lbl
+            // 
+            this.temp_mes_lbl.AutoSize = true;
+            this.temp_mes_lbl.Location = new System.Drawing.Point(589, 135);
+            this.temp_mes_lbl.Name = "temp_mes_lbl";
+            this.temp_mes_lbl.Size = new System.Drawing.Size(62, 13);
+            this.temp_mes_lbl.TabIndex = 8;
+            this.temp_mes_lbl.Text = "placeholder";
+            // 
+            // humid_mes_lbl
+            // 
+            this.humid_mes_lbl.AutoSize = true;
+            this.humid_mes_lbl.Location = new System.Drawing.Point(589, 148);
+            this.humid_mes_lbl.Name = "humid_mes_lbl";
+            this.humid_mes_lbl.Size = new System.Drawing.Size(62, 13);
+            this.humid_mes_lbl.TabIndex = 9;
+            this.humid_mes_lbl.Text = "placeholder";
+            // 
+            // press_mes_lbl
+            // 
+            this.press_mes_lbl.AutoSize = true;
+            this.press_mes_lbl.Location = new System.Drawing.Point(589, 164);
+            this.press_mes_lbl.Name = "press_mes_lbl";
+            this.press_mes_lbl.Size = new System.Drawing.Size(62, 13);
+            this.press_mes_lbl.TabIndex = 10;
+            this.press_mes_lbl.Text = "placeholder";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 492);
+            this.Controls.Add(this.press_mes_lbl);
+            this.Controls.Add(this.humid_mes_lbl);
+            this.Controls.Add(this.temp_mes_lbl);
+            this.Controls.Add(this.press_title_lbl);
+            this.Controls.Add(this.humid_title_lbl);
+            this.Controls.Add(this.temp_title_lbl);
             this.Controls.Add(this.leave_btn);
             this.Controls.Add(this.join_btn);
             this.Controls.Add(this.simple_text2);
             this.Controls.Add(this.status);
             this.Controls.Add(this.simple_text1);
             this.Name = "Form1";
-            this.Text = "t";
+            this.Text = "weather station main window";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,6 +181,12 @@
         private System.Windows.Forms.Label simple_text2;
         private System.Windows.Forms.Button join_btn;
         private System.Windows.Forms.Button leave_btn;
+        private System.Windows.Forms.Label temp_title_lbl;
+        private System.Windows.Forms.Label humid_title_lbl;
+        private System.Windows.Forms.Label press_title_lbl;
+        private System.Windows.Forms.Label temp_mes_lbl;
+        private System.Windows.Forms.Label humid_mes_lbl;
+        private System.Windows.Forms.Label press_mes_lbl;
     }
 }
 

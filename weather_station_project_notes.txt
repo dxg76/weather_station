@@ -1,0 +1,48 @@
+Weather Station Project:
+
+Parts List:
+
+Arduino Mega 2560
+LCD Display
+Temperature sensor
+
+22 Gauge Jumpers
+
+
+Specs:
+
+Monitor Temperature, humidity and atmospheric pressure
+
+Display Weather Data on LCD
+
+Robust design safe to move without disturbing connections
+
+Battery Powered
+
+
+
+10/08/2025
+
+ESP32 can read temperature and pressure from the GYBMP280 breakout board
+
+Had to install a few libraries to get it to work. I also wrote a short i2c scanner script to determine the address of the GYBMP280 (0x76)
+
+Adafruit_BMP280.h and its dependencies Adafruit_sensor.h, and Adafruit_BusIO.h
+
+I used the method described in this youtube video to interface with the GY BMP280 https://www.youtube.com/watch?v=InNHrtnZgUQ
+
+
+8/28/2026
+
+Replaced faulty DHT11, and recalibrated temperature, began work with web socket and internet connection. The ESP32 connects to wifi, and im able to get some interaction with the server using a browser as a client. The main mission of the next work session is getting the server to work seamlessly with a browser client. When a client joins the server should serve an html with the weather info and a greeting. I changed the dht11 pin to 4 to avoid potential RX uart issues, as suggested by perplexity
+
+8/29/2026
+
+Echo server using python client is working. Attempting to make windows form app. Windows form app created it is able to connect and disconnect to the websocket
+
+8/31/2026
+
+worked on the message sending functionality. Arduino code is finished for now and sends weather data in json format to be parsed by form app. however while integrating the json parsing i ran into compatibility issues with my old framework version
+
+need to create new project on .net 8.0 or higher and transfer the old project files to it.
+
