@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|solutionrelative:weather_station\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|c:\\users\\dante\\source\\repos\\weather_station\\weather_station\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|solutionrelative:weather_station\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|c:\\users\\dante\\source\\repos\\weather_station\\weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{23A0C5EE-ACE8-4305-95BD-7FCBF82E0279}|weather_station\\weather_station.csproj|solutionrelative:weather_station\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -36,7 +40,7 @@
               "RelativeDocumentMoniker": "weather_station\\Form1.cs",
               "ToolTip": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Form1.cs",
               "RelativeToolTip": "weather_station\\Form1.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswEMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-29T14:03:23.602Z",
               "IsPinned": true,
@@ -44,7 +48,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\DANTE\\source\\repos\\weather_station\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -58,20 +62,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Program.cs",
+              "RelativeDocumentMoniker": "weather_station\\Program.cs",
+              "ToolTip": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Program.cs",
+              "RelativeToolTip": "weather_station\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-31T18:26:49.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "weather_station\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Form1.Designer.cs",
               "RelativeToolTip": "weather_station\\Form1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAnwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-29T14:03:28.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DANTE\\source\\repos\\weather_station\\weather_station\\Form1.cs",
               "RelativeDocumentMoniker": "weather_station\\Form1.cs",
