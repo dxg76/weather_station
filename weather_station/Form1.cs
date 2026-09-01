@@ -12,7 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
-using System.Text.Json; //not accepted by compiler
+//using System.Text.Json; //not accepted by compiler
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,7 +56,7 @@ namespace weather_station
                 status.Text = "connected";
                 Console.WriteLine("connected to weather station!");
                 //non-blocking receive
-                await receive_weather_data(_cancellationTokenSource.Token);
+                //await receive_weather_data(_cancellationTokenSource.Token);
             }
             catch (Exception ex)
             {
@@ -87,7 +87,7 @@ namespace weather_station
             disconnect_ws();
         }
 
-       
+       /*
         // check through this and then reannotate
         private async Task receive_weather_data(CancellationToken cancellationToken)
         {
@@ -167,8 +167,9 @@ namespace weather_station
                 }));
             }
         }
-
+       */
     }
+       
     public class WeatherData
     {
         public float Temperature { get; set; }
