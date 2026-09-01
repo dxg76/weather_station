@@ -85,9 +85,9 @@
             temp_title_lbl.AutoSize = true;
             temp_title_lbl.Location = new Point(413, 70);
             temp_title_lbl.Name = "temp_title_lbl";
-            temp_title_lbl.Size = new Size(54, 15);
+            temp_title_lbl.Size = new Size(56, 15);
             temp_title_lbl.TabIndex = 4;
-            temp_title_lbl.Text = "Temp [F]";
+            temp_title_lbl.Text = "Temp [C]";
             // 
             // humid_title_lbl
             // 

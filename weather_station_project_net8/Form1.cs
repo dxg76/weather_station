@@ -35,6 +35,11 @@ namespace weather_station_project_net8
             humid_val_lbl.Text = $"{ weather.Humidity}";
             press_val_lbl.Text = $"{weather.Pressure}";
         }
+        private void clear_weather_lbls(){
+            temp_val_lbl.Text = "---";
+            humid_val_lbl.Text = "---";
+            press_val_lbl.Text = "---";
+        }
         private void weather_station_client_Load(object sender, EventArgs e)
         {
 
@@ -120,9 +125,20 @@ namespace weather_station_project_net8
 
     
         //join weather station server
-        private async void join_btn_Click(object sender, EventArgs e)
-        {
-            ws = new ClientWebSocket();
+        private async void join_btn_Click(object sender, EventArgs e){
+            // prevent a second connection attempt while one is already open.
+            if (ws?.State == WebSocketState.Open){
+                return;
+            }
+
+            // Create objects for this specific connection.
+            ClientWebSocket new_ws = new ClientWebSocket();
+            CancellationTokenSource new_cancellation_token_source = new CancellationTokenSource();
+
+            // Save them as fields so leave_btn_Click can access them later.
+            ws = new_ws;
+            cancellationTokenSource = new_cancellation_token_source;
+
             Uri esp32Uri = new Uri("ws://192.168.0.238");
             Console.WriteLine("connected to weather station!");
 
@@ -154,19 +170,54 @@ namespace weather_station_project_net8
         //disconnect and update screen
         private async void disconnect_ws()
         {
-            //check that socket exists and is open
-            if (ws != null && ws.State == WebSocketState.Open)
-                //disconnet from websocket
-                connect_status_lbl.BackColor = Color.Gray;
-            connect_status_lbl.Text = "disconnecting...";
-            Console.WriteLine("disconnecting from websocket...");
-            await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client disconnected", CancellationToken.None);
+            // Ask receive_weather_data / ReceiveAsync to stop.
+            cancellationTokenSource?.Cancel();
 
-            //find out what this does then reannotate
-            ws?.Dispose();
-            ws = null;
+            // Copy the current socket into a local variable.
+            // This prevents ws from changing underneath this method.
+            ClientWebSocket? active_ws = ws;
 
-            connect_status_lbl.BackColor = Color.FromArgb(255,128,128);
+            //check that socket exists and is in the correct state
+
+            if (active_ws != null){
+                try
+                {
+                    // CloseAsync is valid only in these three states.
+                    if (active_ws.State == WebSocketState.Open || active_ws.State == WebSocketState.CloseReceived ||
+                        active_ws.State == WebSocketState.CloseSent){
+                        //disconnet from websocket
+                        connect_status_lbl.BackColor = Color.Gray;
+                        connect_status_lbl.Text = "disconnecting...";
+                        Console.WriteLine("disconnecting from websocket...");
+                        await active_ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client disconnected", CancellationToken.None);
+                    }
+                }
+                catch (WebSocketException ex)
+                {
+                    Console.WriteLine($"WebSocket close skipped: {ex.Message}");
+                }
+                finally
+                {
+                    active_ws.Dispose();
+                }
+                //find out what this does then reannotate
+                ws?.Dispose();
+                ws = null;
+
+                
+            }
+
+            // Clear the form-level reference only if it still refers
+            // to the socket this method just cleaned up.
+            if (ReferenceEquals(ws, active_ws)){
+                ws = null;
+            }
+
+            cancellationTokenSource?.Dispose();
+            cancellationTokenSource = null;
+            //reset ui
+            clear_weather_lbls();
+            connect_status_lbl.BackColor = Color.FromArgb(255, 128, 128);
             connect_status_lbl.Text = "disconnected";
         }
         private void leave_btn_Click(object sender, EventArgs e)
