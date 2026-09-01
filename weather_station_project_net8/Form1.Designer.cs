@@ -149,6 +149,7 @@
             Controls.Add(title_lbl);
             Name = "weather_station_client";
             Text = "Weather Station";
+            Load += weather_station_client_Load;
             ResumeLayout(false);
             PerformLayout();
         }

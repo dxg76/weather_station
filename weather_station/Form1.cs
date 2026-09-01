@@ -1,4 +1,5 @@
 ﻿/*
+ * OLD VERSION
  * non functional missing some ? modifiers to prevent accessing null targets will figure that out later, 
  * next thing to work on is moving the entire project to a .net8 project because of commpatibility issues
  * 
