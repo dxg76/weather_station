@@ -32,6 +32,8 @@ namespace weather_station_project_net8
         {
 
         }
+
+        //join weather station server
         private async void join_btn_Click(object sender, EventArgs e)
         {
             ws = new ClientWebSocket();
@@ -62,8 +64,26 @@ namespace weather_station_project_net8
                 Console.WriteLine($"Connection error: {ex.Message}");
             }
 
+        }
+        //disconnect and update screen
+        private async void disconnect_ws()
+        {
+            if (ws?.State == WebSocketState.Open)
+                //disconnet from websocket
+                connect_status_lbl.BackColor = Color.Gray;
+            connect_status_lbl.Text = "disconnecting...";
+            Console.WriteLine("disconnecting from websocket...");
+            await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client disconnected", CancellationToken.None);
 
+            ws?.Dispose();
+            ws = null;
 
+            connect_status_lbl.BackColor = Color.Red;
+            connect_status_lbl.Text = "disconnected";
+        }
+        private void leave_btn_Click(object sender, EventArgs e)
+        {
+            disconnect_ws();
         }
     }
 }

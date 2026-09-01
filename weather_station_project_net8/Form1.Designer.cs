@@ -58,6 +58,7 @@
             join_btn.TabIndex = 1;
             join_btn.Text = "Join";
             join_btn.UseVisualStyleBackColor = true;
+            join_btn.Click += join_btn_Click;
             // 
             // leave_btn
             // 
@@ -67,6 +68,7 @@
             leave_btn.TabIndex = 2;
             leave_btn.Text = "Leave";
             leave_btn.UseVisualStyleBackColor = true;
+            leave_btn.Click += leave_btn_Click;
             // 
             // connect_status_lbl
             // 
