@@ -1,4 +1,3 @@
-```md
 # ESP32 Webserver Weather Station
 
 A compact, Wi-Fi-connected weather station built around an ESP32. It reads local temperature, relative humidity, and atmospheric pressure, then delivers the measurements as JSON to a .NET 8 Windows desktop client over WebSockets.
