@@ -34,8 +34,8 @@ The companion Windows application is built with C# and .NET 8 in Visual Studio. 
 
 ## Features
 
-- Collects **temperature** and **relative humidity** using a DHT11 sensor
-- Collects **atmospheric pressure** using a BMP280 sensor
+- Collects **relative humidity** using a DHT11 sensor
+- Collects **temperature** and **atmospheric pressure** using a BMP280 sensor
 - Connects to a local Wi-Fi network
 - Hosts a WebSocket server on the ESP32
 - Sends sensor readings in JSON format
@@ -89,11 +89,9 @@ The ESP32 sends weather measurements as JSON. The exact property names may be ad
 
 | Field | Type | Unit | Description |
 |---|---:|---|---|
-| `temperature` | Number | °C or °F | Current temperature reported by the DHT11 |
+| `temperature` | Number | °C or °F | Current temperature reported by the BMP280 |
 | `humidity` | Number | `%` | Current relative humidity reported by the DHT11 |
 | `pressure` | Number | hPa | Current atmospheric pressure reported by the BMP280 |
-
-> **Note:** Document the selected temperature unit in the ESP32 firmware and keep the Windows client consistent with it.
 
 ## Network Configuration
 
@@ -105,14 +103,7 @@ Example WebSocket endpoint:
 ws://192.168.1.100:81/
 ```
 
-Replace the IP address and port with the values configured in the ESP32 firmware.
-
-### Finding the ESP32 IP Address
-
-- Print the ESP32's assigned IP address to the Arduino serial monitor after Wi-Fi connection.
-- Check the connected-device list in the router's administration interface.
-- Assign a DHCP reservation in the router so the ESP32 receives a predictable local IP address.
-- Add a display, mDNS hostname, or configuration page in a future revision.
+Replace the IP address and port with the values configured in the ESP32 firmware..
 
 ## Suggested Repository Structure
 
@@ -136,7 +127,6 @@ ESP32-Webserver-Weather-Station/
 └── README.md
 ```
 
-> The directory layout above is a suggested structure and can be adapted to match the repository.
 
 ## Setup
 
@@ -201,14 +191,6 @@ Adafruit Unified Sensor
 DHT Sensor Library
 ```
 
-Example installation workflow:
-
-1. Open the Arduino IDE Library Manager.
-2. Search for the required library.
-3. Install the library and any prompted dependencies.
-4. Rebuild the firmware.
-
-> Keep the final library names and versions documented here once the project is finalized. Pinning known-working versions makes future troubleshooting and rebuilds easier.
 
 ## Troubleshooting
 
@@ -255,16 +237,6 @@ This project combines several practical areas of development:
 - JSON serialization and deserialization
 - C# desktop application development with .NET 8
 - Basic user-interface data binding and update logic
-
-## License
-
-Choose and add a license before publishing or sharing the repository publicly.
-
-For example:
-
-```text
-MIT License
-```
 
 ## Author
 
