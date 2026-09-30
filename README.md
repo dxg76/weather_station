@@ -240,7 +240,7 @@ This project combines several practical areas of development:
 
 ## Author
 
-**Dante**  
+**Dante Gordon**  
 Post-graduation personal project — University of West Florida
 
 ## Future Documentation
